@@ -1,0 +1,8 @@
+contentOrigin:
+  repofiles:
+    - ubi.repo
+packages:
+  - mesa-libGL
+  - skopeo
+context:
+  containerfile: ./Dockerfile.cpu.konflux

@@ -19,8 +19,9 @@ RUN pip install --no-cache-dir -U "micropipenv[toml]"
 
 # Install the oc client
 # COPY ./openshift-client-linux.tar.gz /tmp/openshift-client-linux.tar.gz
-COPY *.* /tmp/
-RUN find /tmp/
+RUN mkdir -p /tmp/wznoinsktest
+COPY jupyter/minimal/ubi9-python-3.11/*.* /tmp/wznoinsktest/
+RUN find /tmp/wznoinsktest/
 RUN tar -xzvf /tmp/openshift-client-linux.tar.gz oc && \
     rm -f /tmp/openshift-client-linux.tar.gz
 

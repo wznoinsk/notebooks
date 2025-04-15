@@ -52,7 +52,8 @@ spec:
     value: |
       [
         {"type": "pip", "path": ".", "allow_binary": true, "requirements_files": ["jupyter/minimal/ubi9-python-3.11/requirements.txt", "jupyter/minimal/ubi9-python-3.11/requirements-build.txt"]},
-        {"type": "rpm", "path": "jupyter/minimal/ubi9-python-3.11/"}
+        {"type": "rpm", "path": "jupyter/minimal/ubi9-python-3.11/"},
+        {"type": "generic"}
       ]
   pipelineSpec:
     description: |

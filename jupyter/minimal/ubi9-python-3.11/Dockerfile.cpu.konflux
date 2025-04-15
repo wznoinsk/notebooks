@@ -18,7 +18,8 @@ USER 1001
 RUN pip install --no-cache-dir -U "micropipenv[toml]"
 
 # Install the oc client
-COPY ./openshift-client-linux.tar.gz /tmp/openshift-client-linux.tar.gz
+# COPY ./openshift-client-linux.tar.gz /tmp/openshift-client-linux.tar.gz
+COPY *.* /tmp/
 RUN tar -xzvf /tmp/openshift-client-linux.tar.gz oc && \
     rm -f /tmp/openshift-client-linux.tar.gz
 

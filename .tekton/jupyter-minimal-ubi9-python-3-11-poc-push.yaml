@@ -47,7 +47,7 @@ spec:
   - name: dockerfile
     value: jupyter/minimal/ubi9-python-3.11/Dockerfile.cpu.konflux
   - name: path-context
-    value: jupyter/minimal/ubi9-python-3.11/
+    value: .
   - name: prefetch-input
     value: |
       [

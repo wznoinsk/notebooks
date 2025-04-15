@@ -18,15 +18,12 @@ USER 1001
 RUN pip install --no-cache-dir -U "micropipenv[toml]"
 
 # Install the oc client
-# COPY /cachi2/output/deps/generic/openshift-client-linux.tar.gz /tmp/openshift-client-linux.tar.gz
-RUN cat /cachi2/cachi2.env
-RUN set
-RUN find /
-RUN tar -xzvf /tmp/openshift-client-linux.tar.gz oc && \
+RUN cp /cachi2/output/deps/generic/openshift-client-linux.tar.gz /tmp/openshift-client-linux.tar.gz && \
+    tar -xzvf /tmp/openshift-client-linux.tar.gz oc && \
     rm -f /tmp/openshift-client-linux.tar.gz
 
 ####################
-# jupyter-minimal  #
+# jupyter-minimal  #d
 ####################
 FROM base AS jupyter-minimal
 

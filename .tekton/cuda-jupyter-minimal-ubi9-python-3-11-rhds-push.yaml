@@ -36,7 +36,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-minimal-ubi9-python-3-11-cuda:{{revision}}
+    value: quay.io/redhat-user-workloads/wznoinsk-tenant/cuda-jupyter-minimal-ubi9-python-3-11-rhds:{{revision}}
 
   # below param should be set (e.g.: to 28 days) only for the pull-request type of pipelines
   # while it should not be set at all for 'push' type of pipelines

@@ -17,9 +17,9 @@ metadata:
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: notebooks
-    appstudio.openshift.io/component: jupyter-trustyai-ubi9-python-3-11
+    appstudio.openshift.io/component: jupyter-trustyai-ubi9-python-3-11-rhds
     pipelines.appstudio.openshift.io/type: build
-  name: jupyter-trustyai-ubi9-python-3-11-on-push
+  name: jupyter-trustyai-ubi9-python-3-11-rhds-on-push
   namespace: wznoinsk-tenant
 spec:
   taskRunSpecs:
@@ -39,7 +39,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: 'quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-trustyai-ubi9-python-3-11:{{revision}}'
+    value: 'quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-trustyai-ubi9-python-3-11-rhds:{{revision}}'
 
   # below param should be set (e.g.: to 28 days) only for the pull-request type of pipelines
   # while it should not be set at all for 'push' type of pipelines

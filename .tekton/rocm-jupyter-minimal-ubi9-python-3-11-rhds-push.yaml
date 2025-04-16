@@ -14,7 +14,7 @@ metadata:
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: notebooks
-    appstudio.openshift.io/component: jupyter-minimal-ubi9-python-3-11-rocm
+    appstudio.openshift.io/component: rocm-jupyter-minimal-ubi9-python-3-11-rhds
     pipelines.appstudio.openshift.io/type: build
   name: rocm-jupyter-minimal-ubi9-python-3-11-rhds-on-push
   namespace: wznoinsk-tenant

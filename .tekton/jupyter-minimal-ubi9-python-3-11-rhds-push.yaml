@@ -17,7 +17,7 @@ metadata:
     appstudio.openshift.io/application: notebooks
     appstudio.openshift.io/component: jupyter-minimal-ubi9-python-3-11
     pipelines.appstudio.openshift.io/type: build
-  name: jupyter-minimal-ubi9-python-3-11-on-push
+  name: jupyter-minimal-ubi9-python-3-11-rhds-on-push
   namespace: wznoinsk-tenant
 spec:
   taskRunSpecs:

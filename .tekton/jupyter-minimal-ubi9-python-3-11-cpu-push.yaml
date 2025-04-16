@@ -38,7 +38,6 @@ spec:
   - name: output-image
     value: quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-minimal-ubi9-python-3-11-cpu:{{revision}}
 
-
   # below param should be set (e.g.: to 28 days) only for the pull-request type of pipelines
   # while it should not be set at all for 'push' type of pipelines
   # it's currently here and set to 3d as this is only a poc pipeline definition, needs to be set correctly (as above) when

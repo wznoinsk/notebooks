@@ -10,7 +10,7 @@ metadata:
     pipelinesascode.tekton.dev/on-cel-expression: |
       event == "push" &&
       target_branch == "main" &&
-      ( "jupyter/minimal/ubi9-python-3.11/**".patchChanged() || ".tekton/jupyter-minimal-ubi9-python-3-11-rocm-push.yaml".pathChanged() )
+      ( "jupyter/minimal/ubi9-python-3.11/**".pathChanged() || ".tekton/jupyter-minimal-ubi9-python-3-11-rocm-push.yaml".pathChanged() )
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: notebooks

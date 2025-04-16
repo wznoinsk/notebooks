@@ -14,9 +14,9 @@ metadata:
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: notebooks
-    appstudio.openshift.io/component: jupyter-minimal-ubi9-python-3-11-cpu-poc
+    appstudio.openshift.io/component: jupyter-minimal-ubi9-python-3-11-cpu
     pipelines.appstudio.openshift.io/type: build
-  name: jupyter-minimal-ubi9-python-3-11-cpu-poc-on-push
+  name: jupyter-minimal-ubi9-python-3-11-cpu-on-push
   namespace: wznoinsk-tenant
 spec:
   taskRunSpecs:
@@ -36,7 +36,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-minimal-ubi9-python-3-11-cpu-poc:{{revision}}
+    value: quay.io/redhat-user-workloads/wznoinsk-tenant/jupyter-minimal-ubi9-python-3-11-cpu:{{revision}}
 
   # below param should be set (e.g.: to 28 days) only for the pull-request type of pipelines
   # while it should not be set at all for 'push' type of pipelines

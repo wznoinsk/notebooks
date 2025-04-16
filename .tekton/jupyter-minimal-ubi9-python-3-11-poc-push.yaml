@@ -47,7 +47,7 @@ spec:
   - name: dockerfile
     value: jupyter/minimal/ubi9-python-3.11/Dockerfile.cpu.konflux
   - name: path-context
-    value: .
+    value: jupyter/minimal/ubi9-python-3.11/
   pipelineSpec:
     description: |
       This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
@@ -205,8 +205,6 @@ spec:
         value: $(params.output-image).prefetch
       - name: ociArtifactExpiresAfter
         value: $(params.image-expires-after)
-      - name: dev-package-managers
-        value: "true"
       runAfter:
       - clone-repository
       taskRef:

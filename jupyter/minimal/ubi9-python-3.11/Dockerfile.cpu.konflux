@@ -61,6 +61,6 @@ RUN echo "Installing softwares and packages" && \
     # Apply JupyterLab addons \
     /opt/app-root/bin/utils/addons/apply.sh
 
-WORKDIR /opt/app-root/src
+    WORKDIR /opt/app-root/src
 
 ENTRYPOINT ["start-notebook.sh"]

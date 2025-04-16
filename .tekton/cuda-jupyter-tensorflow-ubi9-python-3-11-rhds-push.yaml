@@ -13,7 +13,7 @@ metadata:
       event == "push" &&
       target_branch == "main" &&
       has(body.repository) && body.repository.full_name == "wznoinsk/notebooks" &&
-      ( "jupyter/tensorflow/ubi9-python-3.11/**".pathChanged() || ".tekton/.tekton/cuda-jupyter-tensorflow-ubi9-python-3-11-rhds-push.yaml".pathChanged() )
+      ( "jupyter/tensorflow/ubi9-python-3.11/**".pathChanged() || ".tekton/cuda-jupyter-tensorflow-ubi9-python-3-11-rhds-push.yaml".pathChanged() )
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: notebooks

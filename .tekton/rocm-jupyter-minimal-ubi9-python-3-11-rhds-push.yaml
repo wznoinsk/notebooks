@@ -19,17 +19,6 @@ metadata:
   name: rocm-jupyter-minimal-ubi9-python-3-11-rhds-on-push
   namespace: wznoinsk-tenant
 spec:
-  taskRunSpecs:
-  - computeResources:
-      limits:
-        memory: 8Gi
-    pipelineTaskName: ecosystem-cert-preflight-checks
-  - computeResources:
-      limits:
-        memory: 8Gi
-    pipelineTaskName: clair-scan
-  timeouts:
-    pipeline: 4h
   params:
   - name: git-url
     value: '{{source_url}}'
@@ -37,11 +26,6 @@ spec:
     value: '{{revision}}'
   - name: output-image
     value: quay.io/redhat-user-workloads/wznoinsk-tenant/rocm-jupyter-minimal-ubi9-python-3-11-rhds:{{revision}}
-
-  # below param should be set (e.g.: to 28 days) only for the pull-request type of pipelines
-  # while it should not be set at all for 'push' type of pipelines
-  # it's currently here and set to 3d as this is only a poc pipeline definition, needs to be set correctly (as above) when
-  # this code will move to production
   - name: image-expires-after
     value: 3d
   - name: build-platforms
@@ -135,7 +119,8 @@ spec:
       name: build-platforms
       type: array
     - default: "false"
-      description: Whether to enable privileged mode, should be used only with remote VMs
+      description: Whether to enable privileged mode, should be used only with remote
+        VMs
       name: privileged-nested
       type: string
     results:
@@ -622,7 +607,19 @@ spec:
       optional: true
     - name: netrc
       optional: true
-  taskRunTemplate: {}
+  taskRunSpecs:
+  - computeResources:
+      limits:
+        memory: 8Gi
+    pipelineTaskName: ecosystem-cert-preflight-checks
+  - computeResources:
+      limits:
+        memory: 8Gi
+    pipelineTaskName: clair-scan
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-rocm-jupyter-minimal-ubi9-python-3-11-rhds
+  timeouts:
+    pipeline: 4h0m0s
   workspaces:
   - name: git-auth
     secret:
